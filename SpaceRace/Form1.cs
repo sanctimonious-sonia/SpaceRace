@@ -13,9 +13,7 @@ namespace SpaceRace
 {
     public partial class Form1 : Form
     {
-
       
-
         public Form1()
         {
             InitializeComponent();
@@ -23,13 +21,16 @@ namespace SpaceRace
 
         string state = "waiting";
 
+        //create players
         Rectangle player1 = new Rectangle(200, 365, 10, 30);
         Rectangle player2 = new Rectangle(400, 365, 10, 30);
         int playerSpeed = 4;
 
+        //set scores
         int p1Score = 0;
         int p2Score = 0;
 
+        //create obstacle lists
         List <Rectangle> leftAsteroidList = new List<Rectangle>();
         List <Rectangle> rightAsteroidList = new List<Rectangle> ();
         int asteroidSpeed = 4;
@@ -45,7 +46,7 @@ namespace SpaceRace
         Random randGen = new Random();
 
        
-
+        //resets game
         public void InitializeGame()
         {
             p1Score = 0;
