@@ -61,12 +61,29 @@ namespace SpaceRace.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Icon rocket {
+        internal static System.IO.UnmanagedMemoryStream beep_07a {
             get {
-                object obj = ResourceManager.GetObject("rocket", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetStream("beep_07a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream buzzer {
+            get {
+                return ResourceManager.GetStream("buzzer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream fanfare_trumpets {
+            get {
+                return ResourceManager.GetStream("fanfare_trumpets", resourceCulture);
             }
         }
     }

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
-//Sonia Rusin-Franke, May 17th 2023: Space Race, a recreation of an Atari game where players race rockets to the top of the screen while avoiding asteroids
+//Sonia Rusin-Franke, May 18th 2023: Space Race, a recreation of an Atari game where players race rockets to the top of the screen while avoiding asteroids
 namespace SpaceRace
 {
     public partial class Form1 : Form
@@ -43,8 +44,11 @@ namespace SpaceRace
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         SolidBrush greenBrush = new SolidBrush(Color.LawnGreen);
 
-        Random randGen = new Random();
+        SoundPlayer beep = new SoundPlayer(Properties.Resources.beep_07a);
+        SoundPlayer buzz = new SoundPlayer(Properties.Resources.buzzer);
+        SoundPlayer trumpets = new SoundPlayer(Properties.Resources.fanfare_trumpets);
 
+        Random randGen = new Random();
        
         //resets game
         public void InitializeGame()
@@ -69,6 +73,7 @@ namespace SpaceRace
 
             state = "playing";
             gameTimer.Enabled = true;
+            beep.Play();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -175,11 +180,13 @@ namespace SpaceRace
                 if (player1.IntersectsWith(rightAsteroidList[i]))
                 {
                     player1.Y = 365;
+                    buzz.Play();
                 }
 
                 if (player2.IntersectsWith(rightAsteroidList[i]))
                 {
                     player2.Y = 365;
+                    buzz.Play();
                 }
             }
 
@@ -198,11 +205,13 @@ namespace SpaceRace
                 if (player1.IntersectsWith(leftAsteroidList[i]))
                 {
                     player1.Y = 365;
+                    buzz.Play();
                 }
 
                 if (player2.IntersectsWith(leftAsteroidList[i]))
                 {
                     player2.Y = 365;
+                    buzz.Play();
                 }
             }
 
@@ -211,6 +220,7 @@ namespace SpaceRace
                 p1Score += 1;
                 p1ScoreLabel.Text = $"{p1Score}";
                 player1.Y = 365;
+                beep.Play();
             }
 
             if (player2.Y < 0)
@@ -218,6 +228,7 @@ namespace SpaceRace
                 p2Score += 1;
                 p2ScoreLabel.Text = $"{p2Score}";
                 player2.Y = 365;
+                beep.Play();
             }
 
             if (p1Score == 5)
@@ -231,6 +242,7 @@ namespace SpaceRace
 
                 titleLabel.Text = "PLAYER 1 WINS";
                 subLabel.Text = "Press Space to Restart or Esc to Quit";
+                trumpets.Play();
             }
 
             if (p2Score == 5)
@@ -244,6 +256,7 @@ namespace SpaceRace
 
                 titleLabel.Text = "PLAYER 2 WINS";
                 subLabel.Text = "Press Space to Restart or Esc to Quit";
+                trumpets.Play();
             }
 
             Refresh();

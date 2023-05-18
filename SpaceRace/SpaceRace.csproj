@@ -83,5 +83,14 @@
   <ItemGroup>
     <None Include="Resources\Bokehlicia-Captiva-Rocket.256.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep-07a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-apartment-buzzer-bell-press-932.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fanfare_trumpets.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
